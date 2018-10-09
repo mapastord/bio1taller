@@ -2,11 +2,16 @@
 title: "Taller 1: Estadistica descriptiva"
 author: "Miguel Angel Pastor"
 date: " octubre de 2018"
-output: html_document
+output: 
+  html_document:
+    toc: yes
+    df_print: paged
+    theme: journal
+    css: estilo.css
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 
 # Base de datos papa
@@ -62,6 +67,9 @@ boxplot(papa1$Área.Sembrada.ha. ~ papa1$DEPARTAMENTO,
         col = "green", las= 2)
 ```
    
+```{r}
+tapply(papa1$Área.Sembrada.ha., papa1$DEPARTAMENTO,mean)
+```
    
 ```{r}
 plot(papa1$Área.Sembrada.ha., papa1$Área.Cosechada.ha.)
