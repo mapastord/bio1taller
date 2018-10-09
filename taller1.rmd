@@ -27,8 +27,7 @@ A pesar de que la papa puede dar produccion desde los 0 msnm hasta los propios p
 # Cultivo de papa
 papa <- read.csv("Cadena_Productiva_Papa_-_Area__Producci_n_Y_Rendimiento.csv",
                  encoding = "UTF-8")
-
-papa
+head(papa)
 ```
 
 ```{r}
@@ -39,9 +38,9 @@ str(papa)
 ```{r}
 papa1 <- papa [, c("DEPARTAMENTO", "MUNICIPIO", "PERIODO", "Área.Sembrada.ha.", "Área.Cosechada.ha.", "Rendimiento.t.ha.", "Producción.t.")]
 
-papa1
+head(papa1)
 
-# no me deja hacer la tabla de papa1 con  "Produccíon.t."
+
 ```
   
 ```{r}
@@ -56,11 +55,11 @@ hist(papa1$Área.Sembrada.ha.)
    
    
 ```{r}
-boxplot(papa1$Área.Sembrada.ha. ~ papa1$Área.Cosechada.ha.,
+boxplot(papa1$Área.Sembrada.ha. ~ papa1$DEPARTAMENTO,
         main = "Area sembrada vs Area cosechada",
         xlab = " ",
         ylab = "Has",
-        col = "green")
+        col = "green", las= 2)
 ```
    
    
