@@ -63,3 +63,18 @@ boxplot(papa1$Área.Sembrada.ha. ~ papa1$DEPARTAMENTO,
 ```
    
    
+```{r}
+plot(papa1$Área.Sembrada.ha., papa1$Área.Cosechada.ha.)
+```
+   
+   
+```{r}
+papa1$diferencia <- papa1$Área.Sembrada.ha. - papa1$Área.Cosechada.ha.
+
+
+plot(papa1$Área.Sembrada.ha., papa1$diferencia)
+
+
+```
+   
+   
