@@ -1,0 +1,61 @@
+---
+title: "Analisis de encuesta"
+author: "Miguel Angel Pastor"
+date: "7 de septiembre de 2018"
+output:
+  html_document:
+      df_print: paged
+      toc: yes
+      toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.align = "center")
+```
+
+# Lectura de datos 
+
+```{r}
+encuesta <- read.csv2("Encuesta.csv", dec=",", encoding = "UTF-8")
+encuesta
+```
+
+Este es el resumen numerico de la encuesta 
+
+```{r}
+summary(encuesta)
+```
+
+# Analisis del PAPA
+
+## Descriptivo 
+
+```{r}
+mean(encuesta$PAPA)
+```
+
+
+## Graficos 
+
+### Histograma 
+
+```{r}
+hist(encuesta$PAPA)
+```
+
+  - **histogrma mejorado:**
+      + Ejemplo 
+      
+```{r}
+hist(encuesta$PAPA, 
+     col = "green",
+     main= "distribucion del PAPA",
+     ylab = "frecuencia",
+     xlab = "PAPA",
+     xlim = c(2.5,5), 
+     ylim = c(0,12))
+grid()
+```
+    
+    
