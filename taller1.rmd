@@ -24,6 +24,7 @@ A pesar de que la papa puede dar produccion desde los 0 msnm hasta los propios p
 
   * ¿Cuales son las zonas (Departementos y Municipios)con mayor produccion de papa en colombia? 
   * ¿Cuales son las zonas (Departementos y Municipios)con mayores rendimientos de papa?
+  * ¿cual es el mayor pocentaje de areas cultivadas en colombia?
   * ¿los rendimientos mas alto se obtinenen de areas cultivadas grandes o pequeñas?
   * ¿ 
   
@@ -54,16 +55,19 @@ summary(papa1)
   
    
 ```{r}
-hist(papa1$Área.Sembrada.ha.)
+hist(papa1$Área.Sembrada.ha., main = paste("Histograma de área sembrada"), xlab = "Área sembrada", ylab = "Frecuencia", col = "green4")
+
+
+
 ```
    
    
    
 ```{r}
 boxplot(papa1$Área.Sembrada.ha. ~ papa1$DEPARTAMENTO,
-        main = "Area sembrada vs Area cosechada",
+        main = "Area sembrada por departamentos",
         xlab = " ",
-        ylab = "Has",
+        ylab = "Hectáreas",
         col = "green", las= 2)
 ```
    
@@ -86,3 +90,6 @@ plot(papa1$Área.Sembrada.ha., papa1$diferencia)
 ```
    
    
+## Conclusiones 
+
+ *
