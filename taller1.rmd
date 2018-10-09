@@ -1,0 +1,66 @@
+---
+title: "Taller 1: Estadistica descriptiva"
+author: "Miguel Angel Pastor"
+date: " octubre de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Base de datos papa
+## Planteamiento del problema 
+
+El cultivo de la papa ha tenido grandes problematicas ambientales, pues éste, por ser un cultivo perteneciente a la famila de las solanaceas, y por tener una larga trayectoria en su produccion,  es muy suceptible a plagas y enfermedades ya que estas van generando resistencia a los diferentes productos que se aplican para su control; debido a esto se hace necesario la aplicacion de gran cantidad de insumos para su producción sin darle gran importancia a al impacto ambiental que se genera.
+A pesar de que la papa puede dar produccion desde los 0 msnm hasta los propios paramos para disminuir el ataque por plagas y enfermedades los agricultores prefieren cultivarla en zonas altas como paramos o cercanas a los paramos. Es aca donde se genera la gran problematica de este cultivo principalmente a nivel ambiental ya que cuando se afecta el medio ambiente con aplicacion de productos para el control de plagas y enfermedades, tambien se destruye no de los ecosistemas mas imprtantes de la tierra como los paramos o zonas aledañas que proveen el recurso mas importante para la vida como lo es el recurso hidrico. 
+
+## Preguntas de interes con respecto a los datos
+
+  * ¿Cuales son las zonas (Departementos y Municipios)con mayor produccion de papa en colombia? 
+  * ¿Cuales son las zonas (Departementos y Municipios)con mayores rendimientos de papa?
+  * ¿los rendimientos mas alto se obtinenen de areas cultivadas grandes o pequeñas?
+  * ¿ 
+  
+  
+```{r}
+# Cultivo de papa
+papa <- read.csv("Cadena_Productiva_Papa_-_Area__Producci_n_Y_Rendimiento.csv",
+                 encoding = "UTF-8")
+
+papa
+```
+
+```{r}
+str(papa)
+```
+  
+
+```{r}
+papa1 <- papa [, c("DEPARTAMENTO", "MUNICIPIO", "PERIODO", "Área.Sembrada.ha.", "Área.Cosechada.ha.", "Rendimiento.t.ha.", "Producción.t.")]
+
+papa1
+
+# no me deja hacer la tabla de papa1 con  "Produccíon.t."
+```
+  
+```{r}
+summary(papa1)
+```
+  
+   
+```{r}
+hist(papa1$Área.Sembrada.ha.)
+```
+   
+   
+   
+```{r}
+boxplot(papa1$Área.Sembrada.ha. ~ papa1$Área.Cosechada.ha.,
+        main = "Area sembrada vs Area cosechada",
+        xlab = " ",
+        ylab = "Has",
+        col = "green")
+```
+   
+   
