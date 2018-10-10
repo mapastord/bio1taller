@@ -1,6 +1,6 @@
 ---
 title: "Taller 1: Estadistica descriptiva"
-author: "Miguel Angel Pastor"
+author: "Maria Camila Gómez, Miguel Angel Pastor"
 date: " octubre de 2018"
 output: 
   html_document:
